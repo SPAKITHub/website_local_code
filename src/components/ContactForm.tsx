@@ -14,6 +14,7 @@ const ContactForm = () => {
   const form = useForm({
     defaultValues: {
       name: '',
+      ContactNumber: '',
       email: '',
       subject: '',
       message: '',
@@ -25,6 +26,7 @@ const ContactForm = () => {
 
     const formData = new FormData();
     formData.append('entry.2005620554', data.name);
+    formData.append('entry.1315834743', data.ContactNumber);
     formData.append('entry.1045781291', data.email);
     formData.append('entry.1065046570', data.subject);
     formData.append('entry.1166974658', data.message);
@@ -69,6 +71,20 @@ const ContactForm = () => {
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
                     <Input placeholder="John Doe" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="ContactNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="+91 1234567890" type="ContactNumber" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

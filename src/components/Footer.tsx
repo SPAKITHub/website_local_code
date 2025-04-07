@@ -73,7 +73,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Contact</h4>
             <ul className="space-y-3">
-              <li className="text-foreground/70">+1 (555) 123-4567</li>
+              <li className="text-foreground/70">+91 8555036093,+91 8519895855</li>
               <li className="text-foreground/70">contact@spakithub.com</li>
               <li className="text-foreground/70">P.No:38, level 6, N-Heights, Siddiq Nagar,Hi-Tech city, Hyderabad ,Telangana 500081</li>
             </ul>

@@ -12,7 +12,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ className }) => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 765-4321"],
+      details: ["+91 8555036093", "+91 8519895855"],
       color: "bg-blue-50 text-blue-600"
     },
     {
