@@ -39,8 +39,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/"
-          className="inline-flex items-center gap-2"
-        >
+          className="inline-flex items-center gap-3"
+         >
+           <img 
+            src="/images/spakLogo.png" 
+            alt="SPAK IT Hub Logo"
+            className="w-20 h-30 object-cover rounded-lg mr-3"
+           />
           <span className="font-display font-bold text-2xl bg-gradient-to-r from-spak-600 to-spak-500 bg-clip-text text-transparent">
             SPAK IT Hub
           </span>
