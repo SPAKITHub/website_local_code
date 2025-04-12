@@ -1,6 +1,6 @@
 
 import { ArrowUp } from "lucide-react";
-
+//a "Scroll to Top" button with an ArrowUp icon from the lucide-react library.
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -15,9 +15,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
             <a href="#home" className="inline-flex items-center gap-2 mb-4">
-              <span className="font-display font-bold text-2xl bg-gradient-to-r from-spak-600 to-spak-500 bg-clip-text text-transparent">
-                SPAK IT Hub
-              </span>
+            <img
+                loading="lazy"
+                src="/images/spakLogo.png" 
+                alt="SPAK IT Hub Logo"
+                className="w-25 h-25 object-cover rounded-lg mr-1"
+              />              
             </a>
             <p className="text-foreground/70 mb-6 max-w-md">
               SPAK IT Hub delivers innovative software solutions to help businesses thrive in the digital age. Our expert team is committed to excellence in every project.
@@ -64,9 +67,12 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Services</h4>
             <ul className="space-y-3">
               <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Software Development</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Cloud Services</a></li>
+              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Web Development</a></li>
+              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Mobile Development</a></li>
               <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Data Analytics</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">IT Infrastructure</a></li>
+              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">AI & Machine Learning</a></li>
+              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">IT Consulting</a></li>
+              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Cybersecurity</a></li>
             </ul>
           </div>
           
