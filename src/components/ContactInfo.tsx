@@ -18,7 +18,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ className }) => {
     {
       icon: Mail,
       title: "Email",
-      details: ["contact@spakithub.com", "support@spakithub.com","trainee@spakithub.com"],
+      details: ["admin@spakithub.com", "hr@spakithub.com","info@spakithub.com"],
       color: "bg-purple-50 text-purple-600"
     },
     {
