@@ -30,15 +30,15 @@ const About = () => {
                   <div className="flex-1 p-8 md:p-10">
                     <div className="grid grid-cols-2 gap-6">
                       <div className="p-6 bg-white/50 rounded-lg flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl font-bold text-spak-700">10+</span>
+                        <span className="text-4xl font-bold text-spak-700">1+</span>
                         <span className="text-sm text-foreground/70 mt-2">Years Experience</span>
                       </div>
                       <div className="p-6 bg-white/50 rounded-lg flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl font-bold text-spak-700">200+</span>
+                        <span className="text-4xl font-bold text-spak-700">2+</span>
                         <span className="text-sm text-foreground/70 mt-2">Projects Delivered</span>
                       </div>
                       <div className="p-6 bg-white/50 rounded-lg flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl font-bold text-spak-700">50+</span>
+                        <span className="text-4xl font-bold text-spak-700">5+</span>
                         <span className="text-sm text-foreground/70 mt-2">Tech Experts</span>
                       </div>
                       <div className="p-6 bg-white/50 rounded-lg flex flex-col items-center justify-center text-center">
