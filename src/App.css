@@ -35,6 +35,9 @@
 
 .card {
   padding: 2em;
+  transition: transform 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .read-the-docs {
@@ -126,4 +129,14 @@
   z-index: 9999;
   mix-blend-mode: screen;
   transition: width 0.2s, height 0.2s, opacity 0.5s;
+}
+
+/* career.css */
+
+.card-container {
+  perspective: 1500px;
+}
+
+.card:hover {
+  transform: rotateY(20deg) rotateX(10deg);
 }
