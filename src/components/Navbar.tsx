@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { Home, Info, Briefcase, Users, Mail, Rocket } from "lucide-react";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +23,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Services", href: "/#services" },
-    { name: "Career", href: "/career" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "/", icon: <Home size={16} /> },
+    { name: "About", href: "/#about", icon: <Info size={16} /> },
+    { name: "Services", href: "/#services", icon: <Briefcase size={16} /> },
+    { name: "Career", href: "/#career", icon: <Users size={16} /> },
+    { name: "Contact", href: "/#contact", icon: <Mail size={16} /> },
   ];
+  
 
   return (
     <nav 
@@ -43,39 +46,39 @@ const Navbar = () => {
             <img 
             src="/images/spakLogo.png" 
             alt="SPAK IT Hub Logo"
-            className="w-32 sm:w-36 md:w-60 h-auto object-contain rounded-lg"
+            className="w-32 sm:w-36 md:w-48 max-h-16 object-contain rounded-lg"
             />
 
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            link.href.startsWith('/#') ? (
+        {navLinks.map((link) =>
+            link.href.startsWith("/#") ? (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-spak-600 transition-colors duration-200"
+                className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-spak-600 transition-colors duration-200"
               >
-                {link.name}
+                {link.icon} {link.name}
               </a>
             ) : (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-spak-600 transition-colors duration-200"
+                className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-spak-600 transition-colors duration-200"
               >
-                {link.name}
+                {link.icon} {link.name}
               </Link>
             )
-          ))}
+          )}
           <a 
             href="/#contact" 
-            className="bg-spak-600 hover:bg-spak-700 text-white rounded-md px-5 py-2 text-sm font-medium transition-colors duration-200"
+            className="flex items-center gap-1 bg-spak-600 hover:bg-spak-700 text-white rounded-md px-5 py-2 text-sm font-medium transition-colors duration-200"
           >
-            Get Started
+            <Rocket size={16} /> Get Started
           </a>
-        </div>
+          </div>
 
         {/* Mobile menu button */}
         <button
@@ -95,33 +98,33 @@ const Navbar = () => {
         )}
       >
         <div className="flex flex-col space-y-4 p-6">
-          {navLinks.map((link) => (
-            link.href.startsWith('/#') ? (
+        {navLinks.map((link) =>
+            link.href.startsWith("/#") ? (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-foreground/80 hover:text-spak-600 transition-colors duration-200"
+                className="flex items-center gap-2 text-foreground/80 hover:text-spak-600 transition-colors duration-200"
                 onClick={toggleMenu}
               >
-                {link.name}
+                {link.icon} {link.name}
               </a>
             ) : (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-foreground/80 hover:text-spak-600 transition-colors duration-200"
+                className="flex items-center gap-2 text-foreground/80 hover:text-spak-600 transition-colors duration-200"
                 onClick={toggleMenu}
               >
-                {link.name}
+                {link.icon} {link.name}
               </Link>
             )
-          ))}
+          )}
           <a 
             href="/#contact" 
-            className="bg-spak-600 hover:bg-spak-700 text-white text-center rounded-md px-5 py-2 font-medium transition-colors duration-200"
+            className="flex items-center justify-center gap-1 bg-spak-600 hover:bg-spak-700 text-white text-center rounded-md px-5 py-2 font-medium transition-colors duration-200"
             onClick={toggleMenu}
           >
-            Get Started
+            <Rocket size={16} /> Get Started
           </a>
         </div>
       </div>
