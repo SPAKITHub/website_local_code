@@ -38,12 +38,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/"
-          className="inline-flex items-center gap-3 flex-shrink-0"
+          className="inline-flex items-center gap-3"
          > 
             <img 
             src="/images/spakLogo.png" 
             alt="SPAK IT Hub Logo"
-            className="w-32 sm:w-36 md:w-60 h-auto object-contain rounded-lg"
+            className="w-60 h-auto object-contain rounded-lg mr-3"
             />
 
         </Link>
