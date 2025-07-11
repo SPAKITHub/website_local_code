@@ -168,6 +168,7 @@ export default {
 				'slide-up': 'slide-up 0.5s ease-out forwards',
 				'slide-down': 'slide-down 0.5s ease-out forwards',
 				'rotate-in': 'rotate-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],

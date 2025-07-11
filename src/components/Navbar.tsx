@@ -26,7 +26,7 @@ const Navbar = () => {
     { name: "Home", href: "/", icon: <Home size={16} /> },
     { name: "About", href: "/#about", icon: <Info size={16} /> },
     { name: "Services", href: "/#services", icon: <Briefcase size={16} /> },
-    { name: "Career", href: "/#career", icon: <Users size={16} /> },
+    { name: "Career", href: "/career", icon: <Users size={16} /> },
     { name: "Contact", href: "/#contact", icon: <Mail size={16} /> },
   ];
   
@@ -46,7 +46,7 @@ const Navbar = () => {
             <img 
             src="/images/spakLogo.png" 
             alt="SPAK IT Hub Logo"
-            className="w-32 sm:w-36 md:w-48 max-h-16 object-contain rounded-lg"
+            className="h-12 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[180px] object-contain rounded-lg"
             />
 
         </Link>

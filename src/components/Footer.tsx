@@ -19,7 +19,7 @@ const Footer = () => {
                 loading="lazy"
                 src="/images/spakLogo.png" 
                 alt="SPAK IT Hub Logo"
-                className="w-25 h-25 object-cover rounded-lg mr-1"
+                className="h-16 w-auto max-w-[160px] object-contain rounded-lg mr-1"
               />              
             </a>
             <p className="text-foreground/70 mb-6 max-w-md">

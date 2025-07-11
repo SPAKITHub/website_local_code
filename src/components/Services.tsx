@@ -1,11 +1,26 @@
 
 import { Code, BarChart, Smartphone, ShieldCheck, Binary, Globe, Lightbulb } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FadeIn from "./animations/FadeIn";
 import { cn } from "@/lib/utils";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState("development");
+  const [flowIndex, setFlowIndex] = useState(0);
+
+  // Auto-flow through services
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlowIndex((prev) => (prev + 1) % services.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Update active tab based on flow
+  useEffect(() => {
+    setActiveTab(services[flowIndex].id);
+  }, [flowIndex]);
 
   const services = [
     {
@@ -120,17 +135,26 @@ const Services = () => {
             <FadeIn 
               key={service.id} 
               delay={100 * index}
-              className="group"
+              className={cn(
+                "group relative overflow-hidden",
+                flowIndex === index && "animate-pulse-subtle"
+              )}
             >
               <div 
                 className={cn(
-                  "h-full p-8 rounded-xl transition-all duration-300 cursor-pointer card-hover",
+                  "h-full p-8 rounded-xl transition-all duration-500 cursor-pointer card-hover relative",
                   activeTab === service.id 
                     ? "bg-spak-600 text-white border border-spak-500" 
                     : "bg-white/80 border border-spak-100/80 hover:border-spak-200"
                 )}
                 onClick={() => setActiveTab(service.id)}
               >
+                {/* Flow indicator */}
+                <div className={cn(
+                  "absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-spak-400 to-spak-600 transform transition-transform duration-500",
+                  flowIndex === index ? "translate-x-0" : "-translate-x-full"
+                )} />
+                
                 <div className={cn(
                   "w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300",
                   activeTab === service.id 
@@ -139,7 +163,8 @@ const Services = () => {
                 )}>
                   <service.icon 
                     className={cn(
-                      "h-6 w-6 transition-colors duration-300",
+                      "h-6 w-6 transition-all duration-300",
+                      flowIndex === index && "animate-bounce-subtle",
                       activeTab === service.id ? "text-white" : "text-spak-600"
                     )} 
                   />
@@ -151,16 +176,30 @@ const Services = () => {
                 )}>
                   {service.description}
                 </p>
+                
+                {/* Animated background effect */}
+                <div className={cn(
+                  "absolute inset-0 bg-gradient-to-r from-spak-400/0 via-spak-500/10 to-spak-600/0 opacity-0 transform -translate-x-full transition-all duration-1000",
+                  flowIndex === index ? "translate-x-full opacity-100" : ""
+                )} />
               </div>
             </FadeIn>
           ))}
         </div>
 
         <FadeIn direction="up">
-          <div className="glass rounded-xl border border-white/40 overflow-hidden shadow-elevated">
+          <div className="glass rounded-xl border border-white/40 overflow-hidden shadow-elevated relative">
+            {/* Flow progress indicator */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-spak-100">
+              <div 
+                className="h-full bg-gradient-to-r from-spak-400 to-spak-600 transition-all duration-3000 ease-linear"
+                style={{ width: `${((flowIndex + 1) / services.length) * 100}%` }}
+              />
+            </div>
+            
             {services.map((service) => (
               activeTab === service.id && (
-                <div key={service.id} className="p-8 md:p-12">
+                <div key={service.id} className="p-8 md:p-12 animate-fade-in">
                   <div className="flex items-center mb-8">
                     <div className="w-16 h-16 rounded-lg bg-spak-50 flex items-center justify-center mr-6">
                       <service.icon className="h-8 w-8 text-spak-600" />
@@ -173,7 +212,11 @@ const Services = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {service.features.map((feature, index) => (
-                      <div key={index} className="bg-white/50 rounded-lg p-6 border border-spak-100/50">
+                      <div 
+                        key={index} 
+                        className="bg-white/50 rounded-lg p-6 border border-spak-100/50 animate-slide-up"
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
                         <h4 className="text-lg font-semibold mb-2">{feature}</h4>
                         <p className="text-foreground/70 text-sm">
                           Our expert team delivers high-quality solutions with a focus on scalability and performance.
