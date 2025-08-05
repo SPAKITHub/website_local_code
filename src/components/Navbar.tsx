@@ -26,7 +26,7 @@ const Navbar = () => {
     { name: "Home", href: "/", icon: <Home size={16} /> },
     { name: "About", href: "/#about", icon: <Info size={16} /> },
     { name: "Services", href: "/#services", icon: <Briefcase size={16} /> },
-    { name: "Academic", href: "/academic", icon: <Users size={16} /> },
+    { name: "Academy", href: "/academy", icon: <Users size={16} /> },
     { name: "Career", href: "/career", icon: <Users size={16} /> },
     { name: "Contact", href: "/#contact", icon: <Mail size={16} /> },
   ];
