@@ -8,6 +8,7 @@ import Career from "./pages/Career";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
 import Academy from "./pages/academy";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Route path="/career" element={<Career />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/academy" element={<Academy />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </TooltipProvider>

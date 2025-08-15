@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { Home, Info, Briefcase, Users, Mail, Rocket } from "lucide-react";
+import { Home, Info, Briefcase, Users, Mail, Rocket, LogIn } from "lucide-react";
 
 
 const Navbar = () => {
@@ -79,6 +79,12 @@ const Navbar = () => {
           >
             <Rocket size={16} /> Get Started
           </a>
+          <Link
+            to="/login"
+            className="flex items-center gap-1 border border-spak-600 text-spak-600 hover:bg-spak-600 hover:text-white rounded-md px-5 py-2 text-sm font-medium transition-colors duration-200"
+          >
+            <LogIn size={16} /> Sign In
+          </Link>
           </div>
 
         {/* Mobile menu button */}
@@ -127,6 +133,13 @@ const Navbar = () => {
           >
             <Rocket size={16} /> Get Started
           </a>
+          <Link
+            to="/login"
+            className="flex items-center justify-center gap-1 border border-spak-600 text-spak-600 hover:bg-spak-600 hover:text-white text-center rounded-md px-5 py-2 font-medium transition-colors duration-200"
+            onClick={toggleMenu}
+          >
+            <LogIn size={16} /> Sign In
+          </Link>
         </div>
       </div>
     </nav>
