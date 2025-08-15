@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, KeyRound, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,15 +9,22 @@ import { useToast } from "@/hooks/use-toast";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passcode, setPasscode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+    useEffect(() => {
+  if (sessionStorage.getItem("isLoggedIn") === "true") {
+    sessionStorage.removeItem("isLoggedIn");
+    window.location.href = "/"; // Redirect to home (signed out)
+  }
+}, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !password) {
+    if (!passcode) {
       toast({
         title: "Error",
         description: "Please fill in all fields",
@@ -32,6 +39,16 @@ const Login = () => {
     setTimeout(() => {
       setIsLoading(false);
       
+      // Here you could check passcode logic before redirect
+      if (passcode !== "2025") {
+        toast({
+          title: "Invalid Passcode",
+          description: "Please enter the correct passcode",
+          variant: "destructive",
+        });
+        return;
+      }
+      sessionStorage.setItem("isLoggedIn", "true");
       // Redirect to Zoho URL
       window.location.href = "https://accounts.zoho.in/signin?servicename=VirtualOffice&signupurl=https://www.zoho.com/mail/zohomail-pricing.html&serviceurl=https://mail.zoho.in";
     }, 1000);
@@ -69,6 +86,7 @@ const Login = () => {
           {/* Login Form */}
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
+
               {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -83,7 +101,7 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     className="pl-10 h-12 border-gray-200 focus:border-spak-500 focus:ring-spak-500"
-                    required
+                    
                   />
                 </div>
               </div>
@@ -102,7 +120,7 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     className="pl-10 pr-10 h-12 border-gray-200 focus:border-spak-500 focus:ring-spak-500"
-                    required
+                    
                   />
                   <button
                     type="button"
@@ -111,6 +129,25 @@ const Login = () => {
                   >
                     {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
+                </div>
+              </div>
+              
+              {/* Passcode Field */}
+              <div>
+                <label htmlFor="passcode" className="block text-sm font-medium text-gray-700 mb-2">
+                  Passcode
+                </label>
+                <div className="relative">
+                  <KeyRound className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Input
+                    id="passcode"
+                    type="text"
+                    value={passcode}
+                    onChange={(e) => setPasscode(e.target.value)}
+                    placeholder="Enter your passcode"
+                    className="pl-10 h-12 border-gray-200 focus:border-spak-500 focus:ring-spak-500"
+                    required
+                  />
                 </div>
               </div>
 
@@ -184,5 +221,10 @@ const Login = () => {
     </>
   );
 };
+const handleSignOut = () => {
+  sessionStorage.removeItem("isLoggedIn");
+  window.location.href = "/login";
+};
+
 
 export default Login;
