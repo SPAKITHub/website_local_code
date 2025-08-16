@@ -10,11 +10,11 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-white py-16 px-6 md:px-10 relative">
+    <footer className="bg-white py-8 px-6 md:px-10 relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
-            <a href="#home" className="inline-flex items-center gap-2 mb-4">
+            <a href="/#home" className="inline-flex items-center gap-2 mb-4">
             <img
                 loading="lazy"
                 src="/images/spakLogo.png" 
@@ -55,30 +55,29 @@ const Footer = () => {
           
           <div>
             <h4 className="text-lg font-bold mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li><a href="#about" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">About Us</a></li>
-              <li><a href="#team" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Our Team</a></li>
-              <li><a href="#" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Careers</a></li>
+            <ul className="space-y-0">
+              <li><a href="/#about" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">About Us</a></li>
+              <li><a href="/career" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Careers</a></li>
               <li><a href="#" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Blog</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-bold mb-4">Services</h4>
-            <ul className="space-y-3">
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Software Development</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Web Development</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Mobile Development</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Data Analytics</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">AI & Machine Learning</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">IT Consulting</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Cybersecurity</a></li>
+            <ul className="space-y-0">
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Software Development</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Web Development</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Mobile Development</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Data Analytics</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">AI & Machine Learning</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">IT Consulting</a></li>
+              <li><a href="/#services" className="text-foreground/70 hover:text-spak-600 transition-colors duration-200">Cybersecurity</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-bold mb-4">Contact</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-0">
               <li className="text-foreground/70">+91 8555036093,+91 8519895855</li>
               <li className="text-foreground/70">hr@spakithub.com</li>
               <li className="text-foreground/70">P.No:38, level 6, N-Heights, Siddiq Nagar,Hi-Tech city, Hyderabad ,Telangana 500081</li>
@@ -86,11 +85,11 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-spak-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-spak-200 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-foreground/60 text-sm">
             © {new Date().getFullYear()} SPAK IT Hub. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
+          <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
             <a href="#" className="text-sm text-foreground/60 hover:text-spak-600 transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="text-sm text-foreground/60 hover:text-spak-600 transition-colors duration-200">Terms of Service</a>
             <a href="#" className="text-sm text-foreground/60 hover:text-spak-600 transition-colors duration-200">Cookie Policy</a>
