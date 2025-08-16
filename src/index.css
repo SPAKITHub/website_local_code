@@ -195,3 +195,7 @@ h1, h2, h3, h4, h5, h6, p, a, button, div, span, section {
 section {
   width: 100% !important;
 }
+html {
+  scroll-behavior: smooth;
+}
+
