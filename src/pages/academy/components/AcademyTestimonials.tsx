@@ -4,7 +4,7 @@ import FadeIn from "@/components/animations/FadeIn";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
+    name: "Priya Reddy",
     role: "Software Engineer at TCS",
     course: "Java Full-Stack Development",
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
@@ -20,7 +20,7 @@ const testimonials = [
     rating: 5
   },
   {
-    name: "Sneha Patel",
+    name: "Sneha CH",
     role: "Cloud Engineer at Infosys",
     course: "AWS & DevOps",
     image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",

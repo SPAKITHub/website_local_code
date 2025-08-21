@@ -16,10 +16,6 @@ const AcademyCTA = () => {
               <CheckCircle className="h-5 w-5" />
               Get Free Counseling
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-spak-600 px-8 py-4 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2">
-              <ArrowRight className="h-5 w-5" />
-              View All Courses
-            </button>
           </div>
         </FadeIn>
       </div>

@@ -29,16 +29,6 @@ const AcademyHero = () => {
             Transform your career with our comprehensive software training programs. 
             Learn from industry experts, work on real projects, and get placed in top companies.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-spak-600 hover:bg-spak-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
-              <BookOpen className="h-5 w-5" />
-              Browse All Courses
-            </button>
-            <button className="border-2 border-spak-600 text-spak-600 hover:bg-spak-600 hover:text-white px-8 py-4 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2">
-              <Download className="h-5 w-5" />
-              Download Brochure
-            </button>
-          </div>
         </FadeIn>
       </div>
     </section>

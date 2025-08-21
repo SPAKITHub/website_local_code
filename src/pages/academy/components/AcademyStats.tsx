@@ -4,9 +4,9 @@ import FadeIn from "@/components/animations/FadeIn";
 
 const stats = [
   { icon: <Users className="h-8 w-8" />, value: "10,000+", label: "Students Trained" },
-  { icon: <Award className="h-8 w-8" />, value: "95%", label: "Placement Rate" },
+  { icon: <Award className="h-8 w-8" />, value: "99%", label: "Placement Rate" },
   { icon: <BookOpen className="h-8 w-8" />, value: "50+", label: "Industry Projects" },
-  { icon: <Star className="h-8 w-8" />, value: "4.8/5", label: "Average Rating" }
+  { icon: <Star className="h-8 w-8" />, value: "4.9/5", label: "Average Rating" }
 ];
 
 const AcademyStats = () => {
