@@ -50,7 +50,7 @@ const Login = () => {
       }
       sessionStorage.setItem("isLoggedIn", "true");
       // Redirect to Zoho URL
-      window.location.href = "https://accounts.zoho.in/signin?servicename=VirtualOffice&signupurl=https://www.zoho.com/mail/zohomail-pricing.html&serviceurl=https://mail.zoho.in";
+      window.location.href = "https://mail.hostinger.com/";
     }, 1000);
   };
 
