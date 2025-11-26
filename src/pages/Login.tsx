@@ -49,7 +49,7 @@ const Login = () => {
         return;
       }
       sessionStorage.setItem("isLoggedIn", "true");
-      // Redirect to Zoho URL
+      // Redirect to Hostinger Mail
       window.location.href = "https://mail.hostinger.com/";
     }, 1000);
   };
